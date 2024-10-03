@@ -5,11 +5,9 @@ pipeline {
         KUBECONFIG = credentials('kubeconfig-credentials-id')
     }
 
-    stages {
-        stage('Checkout') {
+    stage('Checkout') {
             steps {
-                // Melakukan checkout repository yang berisi file YAML
-                git 'https://github.com/Putumerta-collab/Deploy_nginx.git'
+                git branch: 'main', url: 'https://github.com/Putumerta-collab/Deploy_nginx.git'
             }
         }
 
