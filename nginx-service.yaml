@@ -7,6 +7,6 @@ spec:
     app: nginx
   ports:
     - protocol: TCP
-      port: 80
-      targetPort: 90
+      port: 90
+      targetPort: 80
   type: LoadBalancer
