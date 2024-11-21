@@ -18,19 +18,8 @@ pipeline {
             steps {
                 script {
                     // Menerapkan file deployment dan service YAML ke Kubernetes
-                    sh 'kubectl delete -f nginx-deployment.yaml'
-                    sh 'kubectl delete -f nginx-service.yaml'
-                }
-            }
-        }
-
-        stage('Verify Deployment') {
-            steps {
-                script {
-                    // Mengecek status deployment
-                    sh 'kubectl rollout status deployment/nginx-deployment'
-                    // Mendapatkan informasi service
-                    sh 'kubectl get svc nginx-service'
+                    sh 'kubectl apply -f nginx-deployment.yaml'
+                    sh 'kubectl apply -f nginx-service.yaml'
                 }
             }
         }
